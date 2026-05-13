@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ketika Syam Bangkit — Pintu Menuju Baitul Maqdis</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:       #16120c;
+    --parch:     #f8f3e8;
+    --parch2:    #ede5cc;
+    --parch3:    #e0d5b8;
+    --gold:      #a67c2a;
+    --gold-lt:   #c9993c;
+    --gold-pale: #e8d090;
+    --green:     #1b3828;
+    --teal:      #1e3d3a;
+    --crimson:   #6a1a1a;
+    --slate:     #242c38;
+    --muted:     #78684e;
+    --dark:      #0c0a06;
+    --dark2:     #181410;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--dark); font-family: 'Libre Baskerville', Georgia, serif; color: var(--ink); overflow-x: hidden; }
+
+  /* ===== PROLOG ===== */
+  .prolog {
+    background: var(--dark);
+    padding: 64px 28px 0;
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+  }
+  .prolog-arabic {
+    font-family: 'Amiri', serif;
+    font-size: clamp(1.4rem, 3.8vw, 2.3rem);
+    color: var(--gold-pale); direction: rtl;
+    line-height: 2; margin-bottom: 14px;
+    max-width: 680px;
+  }
+  .prolog-tr {
+    font-style: italic; font-size: clamp(0.82rem, 1.8vw, 0.96rem);
+    color: #7a6240; line-height: 1.8; margin-bottom: 8px;
+    max-width: 560px;
+  }
+  .prolog-src { font-size: 0.67rem; color: #3e3020; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 80px 28px 72px;
+    position: relative; overflow: hidden;
+    background: radial-gradient(ellipse 80% 60% at 50% 35%, rgba(166,124,42,0.1) 0%, transparent 65%),
+                linear-gradient(170deg, #0c0a06 0%, #1a1508 55%, #080d08 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(60deg, rgba(166,124,42,0.018) 0px, rgba(166,124,42,0.018) 1px, transparent 1px, transparent 50px),
+      repeating-linear-gradient(-60deg, rgba(166,124,42,0.018) 0px, rgba(166,124,42,0.018) 1px, transparent 1px, transparent 50px);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 720px; }
+  .hero-khatam {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem; letter-spacing: 0.4em;
+    color: var(--gold); text-transform: uppercase;
+    margin-bottom: 36px; opacity: 0.75;
+    animation: dawn 1.5s ease both;
+  }
+  .hero-arabic {
+    font-family: 'Amiri', serif;
+    font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+    color: var(--gold-pale); direction: rtl;
+    line-height: 1.85; margin-bottom: 16px;
+    animation: dawn 1.5s 0.25s ease both;
+  }
+  .hero-tr {
+    font-style: italic; font-size: clamp(0.85rem, 2vw, 1rem);
+    color: #9c7e48; line-height: 1.75; margin-bottom: 6px;
+    animation: dawn 1.5s 0.4s ease both;
+  }
+  .hero-src { font-size: 0.7rem; color: #524030; margin-bottom: 56px; animation: dawn 1.5s 0.5s ease both; }
+  .hero-rule {
+    display: flex; align-items: center; gap: 18px;
+    justify-content: center; margin-bottom: 44px;
+    animation: dawn 1.5s 0.65s ease both;
+  }
+  .hero-rule::before, .hero-rule::after { content: ''; flex: 1; max-width: 80px; height: 1px; background: var(--gold); opacity: 0.4; }
+  .hero-rule span { color: var(--gold); font-size: 0.9rem; opacity: 0.5; letter-spacing: 0.4em; }
+  .hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.5rem, 5vw, 3.2rem);
+    color: var(--parch); line-height: 1.2;
+    margin-bottom: 20px; font-weight: 700;
+    animation: dawn 1.5s 0.75s ease both;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-lt); }
+  .hero-sub {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic; font-size: clamp(0.88rem, 2vw, 1.1rem);
+    color: var(--gold); letter-spacing: 0.03em;
+    animation: dawn 1.5s 0.9s ease both;
+  }
+  .hero-meta {
+    margin-top: 28px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem; letter-spacing: 0.3em;
+    color: #4a3c28; text-transform: uppercase;
+    animation: dawn 1.5s 1.05s ease both;
+  }
+
+  /* ===== PAGE ===== */
+  .page {
+    background: var(--parch);
+    max-width: 840px; margin: 0 auto;
+    padding: clamp(48px, 9vw, 92px) clamp(28px, 9vw, 90px);
+    position: relative;
+  }
+  .page::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, var(--green) 0%, var(--green) 30%, var(--gold) 50%, var(--crimson) 70%, var(--crimson) 100%);
+  }
+
+  /* ===== TYPOGRAPHY ===== */
+  p {
+    font-size: clamp(1rem, 2.3vw, 1.11rem);
+    line-height: 2.05; color: var(--ink);
+    margin-bottom: 1.5em; text-align: justify; hyphens: auto;
+  }
+  .drop-cap::first-letter {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 5.5rem; font-weight: 700;
+    float: left; line-height: 0.72;
+    margin: 8px 10px 0 0; color: var(--green);
+  }
+  strong { font-weight: 700; color: var(--crimson); }
+  em { font-style: italic; }
+
+  /* ===== DIVIDER ===== */
+  .divider { display: flex; align-items: center; gap: 14px; margin: 58px 0 30px; }
+  .divider::before { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+  .divider::after  { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
+  .div-txt { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.18em; color: var(--gold); white-space: nowrap; text-transform: uppercase; }
+
+  /* ===== PULL QUOTE ===== */
+  .pull {
+    border-left: 4px solid var(--gold);
+    padding: 22px 30px 22px 34px; margin: 36px 0;
+    background: linear-gradient(135deg, rgba(166,124,42,0.08), rgba(166,124,42,0.02));
+    position: relative;
+  }
+  .pull::before {
+    content: '\201C'; font-family: 'Amiri', serif; font-size: 5rem;
+    color: var(--gold); opacity: 0.2;
+    position: absolute; top: -12px; left: 10px; line-height: 1;
+  }
+  .pull p { font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.22rem); color: var(--green); line-height: 1.72; margin-bottom: 8px; text-align: left; }
+  .pull .attr { font-size: 0.75rem; color: var(--muted); font-style: normal; text-align: right; margin-bottom: 0; }
+
+  /* ===== HADITH BOX ===== */
+  .hadith {
+    background: linear-gradient(150deg, #100e08, #0d0b06);
+    border: 1px solid rgba(166,124,42,0.22);
+    padding: 30px 36px; margin: 36px 0; text-align: center; position: relative;
+  }
+  .hadith::before { content: ''; position: absolute; inset: 5px; border: 1px solid rgba(166,124,42,0.08); pointer-events: none; }
+  .hadith-ar { font-family: 'Amiri', serif; font-size: clamp(1.1rem, 2.8vw, 1.6rem); color: var(--gold-pale); direction: rtl; line-height: 2.1; margin-bottom: 18px; }
+  .hadith-tr { font-style: italic; font-size: clamp(0.88rem, 2vw, 1.02rem); color: #c0a060; line-height: 1.85; margin-bottom: 10px; text-align: center; }
+  .hadith-src { font-size: 0.7rem; color: #5a4430; text-align: center; margin-bottom: 0; }
+
+  /* ===== GEO CARDS ===== */
+  .geo-grid { display: flex; flex-direction: column; gap: 2px; margin: 36px 0; }
+  .geo-card { display: grid; grid-template-columns: 6px 1fr; overflow: hidden; background: linear-gradient(135deg, var(--parch2), var(--parch3)); }
+  .geo-stripe { background: var(--slate); }
+  .geo-card:nth-child(2) .geo-stripe { background: var(--teal); }
+  .geo-card:nth-child(3) .geo-stripe { background: var(--crimson); }
+  .geo-card:nth-child(4) .geo-stripe { background: var(--green); }
+  .geo-card:nth-child(5) .geo-stripe { background: #5a4010; }
+  .geo-body { padding: 20px 24px; }
+  .geo-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .geo-title { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+  .geo-body p { font-size: 0.93rem; line-height: 1.8; margin-bottom: 0; text-align: left; }
+
+  /* ===== TIMELINE ===== */
+  .timeline { border-left: 2px solid var(--gold); padding-left: 28px; margin: 36px 0; }
+  .tl-item { position: relative; margin-bottom: 30px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-item::before { content: ''; position: absolute; left: -35px; top: 7px; width: 13px; height: 13px; border-radius: 50%; background: var(--gold); border: 2px solid var(--parch); }
+  .tl-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+  .tl-item p { margin-bottom: 0; text-align: left; font-size: 0.95rem; line-height: 1.82; }
+
+  /* ===== CALLOUT ===== */
+  .callout { background: var(--slate); padding: 22px 28px; margin: 34px 0; border-left: 4px solid var(--gold-lt); }
+  .callout-lbl { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold-pale); text-transform: uppercase; margin-bottom: 10px; display: block; }
+  .callout p { color: #b8c4cc; font-size: 0.94rem; line-height: 1.85; margin-bottom: 0; text-align: left; }
+
+  /* ===== AYAT ===== */
+  .ayat { background: var(--green); padding: 28px 34px; margin: 36px 0; }
+  .ayat-ar { font-family: 'Amiri', serif; font-size: clamp(1.1rem, 2.8vw, 1.55rem); color: var(--gold-pale); direction: rtl; line-height: 2.1; margin-bottom: 16px; text-align: center; }
+  .ayat-tr { font-style: italic; font-size: clamp(0.88rem, 2vw, 1rem); color: #b0cbb8; line-height: 1.85; margin-bottom: 8px; text-align: center; }
+  .ayat-src { font-size: 0.7rem; color: #6a8a70; text-align: center; margin-bottom: 0; }
+
+  /* ===== YASSIN ===== */
+  .yassin { border: 1px solid var(--gold); padding: 28px 34px; margin: 40px 0; position: relative; background: rgba(166,124,42,0.04); }
+  .yassin-lbl { position: absolute; top: -13px; left: 20px; background: var(--parch); padding: 0 10px; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+  .yassin-quote { font-size: clamp(1rem, 2.5vw, 1.15rem); font-style: italic; color: var(--green); line-height: 1.8; margin-bottom: 16px; text-align: center; }
+  .yassin-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin: 16px 0 0; }
+  .yassin-col { background: var(--parch2); padding: 14px 16px; text-align: center; }
+  .yassin-col-num { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--gold); font-weight: 600; }
+  .yassin-col-label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+  .yassin-col-tahun { font-size: 0.8rem; font-weight: 700; color: var(--crimson); margin-top: 2px; }
+
+  /* ===== MUHASABAH ===== */
+  .muhasabah { border: 1px solid var(--crimson); padding: 30px 34px; margin: 44px 0; position: relative; background: rgba(106,26,26,0.04); }
+  .muhasabah-lbl { position: absolute; top: -13px; left: 20px; background: var(--parch); padding: 0 10px; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--crimson); text-transform: uppercase; }
+  .muhasabah p { font-style: italic; color: var(--crimson); margin-bottom: 1em; text-align: left; line-height: 1.85; }
+  .muhasabah p:last-child { margin-bottom: 0; }
+
+  /* ===== COLOFON ===== */
+  .colofon { background: var(--dark2); border-top: 1px solid rgba(166,124,42,0.15); padding: 28px; text-align: center; max-width: 840px; margin: 0 auto; }
+  .colofon p { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; color: #3e3020; text-transform: uppercase; margin-bottom: 0; line-height: 2; }
+  .colofon span { color: #6a5030; }
+
+  /* ===== PENUTUP ===== */
+  .penutup { background: linear-gradient(160deg, #0c0a06, #181408, #080d06); padding: 72px 28px; text-align: center; }
+  .penutup-ornament { font-size: 1.3rem; letter-spacing: 0.8em; color: var(--gold); opacity: 0.5; margin-bottom: 36px; }
+  .penutup-arabic { font-family: 'Amiri', serif; font-size: clamp(1.4rem, 3.5vw, 2rem); color: var(--gold-pale); direction: rtl; line-height: 1.95; max-width: 640px; margin: 0 auto 16px; }
+  .penutup-tr { font-style: italic; font-size: clamp(0.88rem, 2vw, 1.02rem); color: #9a7e48; line-height: 1.8; max-width: 540px; margin: 0 auto 6px; }
+  .penutup-src { font-size: 0.7rem; color: #4a3c28; margin-bottom: 36px; }
+  .penutup-narasi { font-style: italic; font-size: clamp(0.92rem, 2vw, 1.05rem); color: #9a8060; line-height: 1.95; max-width: 600px; margin: 0 auto 14px; }
+  .penutup-doa { font-size: 0.7rem; color: #4a3c28; font-style: italic; }
+  .penutup-rule { width: 80px; height: 1px; background: linear-gradient(90deg,transparent,var(--gold),transparent); margin: 28px auto; }
+
+  @keyframes dawn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .drop-cap::first-letter { font-size: 4rem; }
+    .yassin-grid { grid-template-columns: 1fr; }
+    .hadith { padding: 22px 16px; }
+    .geo-card { grid-template-columns: 4px 1fr; }
+    .prolog { padding: 40px 20px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== PROLOG ===== -->
+<div class="prolog">
+  <div class="prolog-arabic">
+    إِذَا فَسَدَ أَهْلُ الشَّامِ فَلَا خَيْرَ فِيكُمْ ۚ وَلَنْ تَزَالَ طَائِفَةٌ مِنْ أُمَّتِي مَنْصُورِينَ لَا يَضُرُّهُمْ مَنْ خَذَلَهُمْ حَتَّى تَقُومَ السَّاعَةُ
+  </div>
+  <p class="prolog-tr">"Jika penduduk Syam telah rusak maka tidak ada kebaikan pada kalian. Akan tetap ada di kalangan ummatku sekelompok orang yang mendapat pertolongan; orang-orang yang merendahkan mereka tidak akan bisa membahayakan mereka sampai hari Kiamat tiba."</p>
+  <p class="prolog-src">— HR. At-Tirmidzi 2192 · Shahih Al-Albani · Dari Muawiyah bin Qurrah dari bapaknya radhiyallahu 'anhu</p>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-khatam">Renungan Geopolitik & Nubuatan · Baitul Maqdis di Ambang Pembebasan</p>
+    <div class="hero-arabic">وَلَقَدْ كَتَبْنَا فِي الزَّبُورِ مِنْ بَعْدِ الذِّكْرِ أَنَّ الْأَرْضَ يَرِثُهَا عِبَادِيَ الصَّالِحُونَ</div>
+    <p class="hero-tr">"Dan sungguh telah Kami tulis di dalam Zabur sesudah (Kami tulis dalam) Lauhul Mahfuzh, bahwasanya bumi ini diwarisi hamba-hamba-Ku yang shalih."</p>
+    <p class="hero-src">— QS. Al-Anbiya' (21): 105</p>
+    <div class="hero-rule"><span>✦</span></div>
+    <h1 class="hero-title">Ketika Syam Bangkit,<br><em>Pintu Baitul Maqdis Terbuka</em></h1>
+    <p class="hero-sub">Sebuah narasi tentang geopolitik, ekonomi global, nubuatan para nabi, dan tanda-tanda yang tak boleh kita abaikan</p>
+    <p class="hero-meta">Ditulis pada Rajab 1447 H · Mei 2026 M</p>
+  </div>
+</section>
+
+<!-- ===== NARASI ===== -->
+<article class="page">
+
+  <p class="drop-cap">Bayangkanlah malam itu. 8 Desember 2024. Damaskus.</p>
+
+  <p>
+    Ribuan orang turun ke jalan dengan wajah yang basah oleh air mata — bukan air mata duka, tapi air mata dari tempat yang lebih dalam dari itu: <em>air mata orang yang tidak percaya bahwa ia masih hidup untuk menyaksikan hari ini.</em> Di pintu-pintu penjara Sednaya — yang selama bertahun-tahun dijuluki "rumah potong manusia" oleh Amnesty International, yang di dalamnya lebih dari seratus ribu orang disiksa, dieksekusi, dan dikubur tanpa nama — orang-orang bergegas masuk. Mereka mencari saudara, anak, suami, istri yang telah hilang bertahun-tahun tanpa kabar. Sebagian mereka temukan. Sebagian lagi hanya menemukan catatan nama di dinding sel yang gelap.
+  </p>
+
+  <p>
+    Bashar al-Assad — penguasa yang selama 24 tahun meminjam wajah ayahnya untuk meneruskan mesin kekerasan yang paling efisien di Timur Tengah — melarikan diri ke Moskow dalam kegelapan malam. Rezim yang telah berdiri 54 tahun, yang telah membunuh lebih dari 500.000 rakyatnya sendiri, yang didukung oleh kekuatan militer Rusia dan Iran sekaligus, runtuh dalam waktu sebelas hari. Seperti gedung tua yang fondasinya telah lapuk dari dalam jauh sebelum angin berhembus.
+  </p>
+
+  <p>
+    Para analis geopolitik menyebutnya "momen 1989 bagi Timur Tengah" — mengacu pada runtuhnya Tembok Berlin yang mengakhiri era komunisme di Eropa. Dan mereka tidak sepenuhnya salah. Tapi momen ini jauh lebih besar dari semua analisis mereka — karena mereka membacanya hanya dengan perangkat ilmu manusia, tanpa membaca ayat-ayat langit yang sudah lama diturunkan untuk menjelaskan ke mana peristiwa-peristiwa seperti ini sedang menuju.
+  </p>
+
+  <p>
+    Pintu-pintu penjara Sednaya dibuka oleh tangan manusia yang mendobraknya. Tapi <strong>pintu itu sesungguhnya dibuka oleh Allah</strong> — yang tidak pernah membiarkan kezaliman berdiri selamanya, dan yang tidak pernah melupakan doa-doa yang dipanjatkan dari balik jeruji besi, dari kamp pengungsi di perbatasan Turki, dari tenda-tenda yang diguyur salju selama lebih dari tiga belas tahun.
+  </p>
+
+  <div class="pull">
+    <p>"Jika penduduk Syam telah rusak maka tidak ada kebaikan pada kalian." Para ulama menjelaskan: yang dimaksud "rusak" adalah rusak agamanya — bukan rusak karena menderita. Cobaan tidak merusak. Yang merusak adalah ketika dalam cobaan, iman ikut runtuh. Penduduk Syam yang bersabar selama tiga belas tahun itu belum rusak. Mereka sedang menempuh jalan yang sama dengan jalan para nabi.</p>
+    <p class="attr">— Syarah Hadits · At-Tirmidzi 2192 · Tadzkir An-Nufus bi Hadits Al-Quds, Sayyid Husain Al-Iffani</p>
+  </div>
+
+  <!-- I: SYAM SEBAGAI KUNCI -->
+  <div class="divider"><span class="div-txt">I · Mengapa Syam adalah Kunci, Bukan Sekadar Konteks</span></div>
+
+  <p>
+    Sebelum kita membaca peta geopolitik, sebelum kita melihat angka-angka ekonomi, ada satu pertanyaan mendasar yang perlu dijawab: <em>mengapa jatuhnya satu rezim di Suriah bisa menjadi pintu bagi pembebasan Baitul Maqdis yang berjarak ratusan kilometer?</em>
+  </p>
+
+  <p>
+    Jawabnya ada pada geografi yang Allah tetapkan dan sejarah yang Allah rancang. Syam — yang mencakup Suriah, Libanon, Yordania, dan Palestina — adalah jembatan tiga benua: Afrika, Asia, dan Eropa. Siapa pun yang menguasai Syam, menguasai jalur perdagangan, jalur militer, dan jalur pengaruh yang menghubungkan ketiganya. Para penjajah Romawi, Persia, Tentara Salib, Utsmaniyah — semuanya memahami ini. Dan di jantung Syam itu berdiri Baitul Maqdis: kota yang Allah namakan "diberkahi sekelilingnya", yang dari halamannya Rasulullah ﷺ diangkat ke langit, dan yang dalam sejarah Islam tidak pernah bisa dibebaskan tanpa terlebih dahulu membebaskan kawasan Syam di sekelilingnya.
+  </p>
+
+  <p>
+    Inilah yang terjadi di masa Umar bin al-Khattab radhiyallahu 'anhu. Baitul Maqdis tidak dibuka secara tiba-tiba dan terisolasi. Ia dibuka setelah Ajnadain, setelah Marj as-Shafar, setelah Fihl Bisan, setelah Yarmuk — setelah seluruh kawasan Syam satu per satu dibebaskan dari Romawi. <strong>Satu kota tidak bisa merdeka sementara seluruh wilayah di sekelilingnya masih dalam genggaman musuh.</strong>
+  </p>
+
+  <p>
+    Jatuhnya Assad bukan peristiwa acak dalam kekacauan regional. Ini adalah dimulainya pembebasan Syam dari rezim yang selama puluhan tahun menggunakan klaim "perlawanan terhadap Israel" sebagai tirai untuk menyembunyikan penindasan terhadap rakyatnya sendiri. Sementara mulutnya berteriak tentang Palestina, tangannya memenjarakan, menyiksa, dan membunuh anak-anak Syam yang hanya meminta keadilan. Selama Assad berkuasa, Syam "rusak" bukan karena menderita — tapi karena dipimpin oleh kezaliman yang memakai topeng keislaman. Kini topeng itu copot. Dan Syam mulai bernapas sebagai dirinya sendiri.
+  </p>
+
+  <div class="ayat">
+    <div class="ayat-ar">وَعَدَ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَعَمِلُوا الصَّالِحَاتِ لَيَسْتَخْلِفَنَّهُمْ فِي الْأَرْضِ كَمَا اسْتَخْلَفَ الَّذِينَ مِن قَبْلِهِمْ وَلَيُمَكِّنَنَّ لَهُمْ دِينَهُمُ الَّذِي ارْتَضَىٰ لَهُمْ</div>
+    <p class="ayat-tr">"Allah telah menjanjikan kepada orang-orang yang beriman dan beramal shalih di antara kalian bahwa Ia sungguh-sungguh akan menjadikan mereka berkuasa di muka bumi, sebagaimana Ia telah menjadikan orang-orang sebelum mereka berkuasa, dan sungguh Ia akan meneguhkan bagi mereka agama yang telah Ia ridhai untuk mereka…"</p>
+    <p class="ayat-src">— QS. An-Nur (24): 55</p>
+  </div>
+
+  <!-- II: GEOPOLITIK -->
+  <div class="divider"><span class="div-txt">II · Lima Pergeseran Geopolitik yang Mengubah Segalanya</span></div>
+
+  <p>
+    Untuk memahami mengapa jatuhnya Assad bukan sekadar berita regional, kita perlu membaca lima pergeseran besar yang sedang terjadi secara bersamaan — seperti lima tiang yang dicabut sekaligus dari bangunan yang selama ini menopang penjajahan Baitul Maqdis.
+  </p>
+
+  <div class="geo-grid">
+    <div class="geo-card">
+      <div class="geo-stripe"></div>
+      <div class="geo-body">
+        <div class="geo-label">Pergeseran Pertama · Rusia</div>
+        <div class="geo-title">Sang Beruang Terperangkap di Lumpur Ukraina</div>
+        <p>Selama lebih dari satu dekade, Rusia adalah penjaga utama rezim Assad. Pangkalan udara Hmeimim di Latakia dan pangkalan laut Tartus memungkinkan Rusia memproyeksikan kekuatannya ke seluruh Mediterania Timur. Pada 2015, intervensi langsung Rusia secara harafiah menyelamatkan Assad dari kehancuran. Tapi sejak invasi penuh ke Ukraina pada Februari 2022, Rusia terperangkap dalam perang yang menguras sumber daya, perhatian, dan reputasi internasionalnya sekaligus. <strong>Ketika Suriah membutuhkan Rusia paling banyak pada Desember 2024, Rusia tidak bisa hadir</strong> — dan tanpa payung Rusia, mesin militer Assad yang selama ini ditopang dari luar runtuh dalam sebelas hari. Bukan karena lawan lebih kuat. Tapi karena penopang terbesar sudah pergi.</p>
+      </div>
+    </div>
+
+    <div class="geo-card">
+      <div class="geo-stripe"></div>
+      <div class="geo-body">
+        <div class="geo-label">Pergeseran Kedua · Iran</div>
+        <div class="geo-title">Poros Perlawanan yang Retak dari Dalam</div>
+        <p>Iran selama bertahun-tahun membangun "Poros Perlawanan" — jaringan proksi dari Teheran ke Beirut, dari Baghdad ke Sanaa, dengan Damaskus sebagai jantungnya. Tapi dalam rentang waktu yang sangat pendek, tiga pilarnya runtuh hampir bersamaan: Hizbullah kehilangan hampir seluruh pimpinan seniornya termasuk Hasan Nasrallah dalam serangan Israel, jalur pasokan senjata Iran ke Lebanon terputus, dan kini Suriah sendiri lepas. <strong>Laporan akademis dari Tandfonline (2025) menyebut Iran kini semakin terisolasi, dipotong dari sistem keuangan Eropa, dan bahkan China serta Rusia mulai lebih berhati-hati karena risiko reputasi dan ekonomi.</strong> Di dalam negeri, protes melanda berbagai provinsi — rakyat Iran bertanya mengapa sumber daya nasional dituangkan untuk perang di luar negeri sementara rumah sakit kekurangan alat dasar dan harga pangan melonjak.</p>
+      </div>
+    </div>
+
+    <div class="geo-card">
+      <div class="geo-stripe"></div>
+      <div class="geo-body">
+        <div class="geo-label">Pergeseran Ketiga · Israel</div>
+        <div class="geo-title">Kemenangan Militer yang Menipu, Keruntuhan dari Dalam</div>
+        <p>Di permukaan, Israel tampak menang: Assad jatuh, Hizbullah lumpuh, Gaza dikepung. Dalam beberapa hari setelah Assad jatuh, Israel melancarkan hampir 500 serangan udara, menduduki zona penyangga Golan, dan menempatkan pasukan di Gunung Hermon. Netanyahu menyebut ini "kesempatan besar." Tapi di balik klaim kemenangan itu ada retakan yang jauh lebih mengkhawatirkan: <strong>gelombang emigrasi warga Israel meningkat tajam pasca-7 Oktober 2023</strong>, dengan ratusan ribu kalangan profesional dan terdidik meninggalkan negeri itu. Lebih genting lagi, populasi Arab-Palestina antara Sungai Jordan dan Laut Mediterania kini menyamai atau melampaui populasi Yahudi — sebuah realitas demografis yang diakui sebagai ancaman eksistensial bahkan oleh para pejabat Israel sendiri. Dan ekonomi Israel pun tertekan berat oleh biaya perang multi-front yang tidak kunjung selesai. International Crisis Group memperingatkan bahwa pendekatan agresif di Suriah justru berisiko mendatangkan skenario terburuk yang paling ditakuti Israel sendiri.</p>
+      </div>
+    </div>
+
+    <div class="geo-card">
+      <div class="geo-stripe"></div>
+      <div class="geo-body">
+        <div class="geo-label">Pergeseran Keempat · Turki & Dunia Sunni</div>
+        <div class="geo-title">Kebangkitan yang Sedang Ditata, dengan Segala Kompleksitasnya</div>
+        <p>Turki menjadi kekuatan regional yang paling diuntungkan dari jatuhnya Assad, dan Ahmed al-Sharaa sebagai Presiden transisi Suriah membuka era baru. Arab Saudi, Qatar, Yordania, dan negara-negara Teluk kini berlomba mengisi kekosongan yang ditinggalkan Iran — rekonstruksi Suriah yang diperkirakan membutuhkan ratusan miliar dolar akan mengalirkan pengaruh dunia Sunni, bukan Iran, ke jantung Levant. Ini adalah pergeseran yang signifikan dan bermakna. Namun perlu kejujuran: <strong>jalan ke depan penuh ketidakpastian.</strong> Turki, Arab Saudi, dan Qatar tidak selalu satu suara. HTS yang kini memegang kendali Damaskus masih sangat baru dan belum terbukti mampu membangun tata kelola yang stabil dalam skala nasional. Dan Israel terang-terangan berusaha menjaga Suriah tetap lemah dan terpecah. Optimisme kita harus lahir dari keyakinan kepada janji Allah — bukan dari asumsi bahwa jalan ke depan akan mulus.</p>
+      </div>
+    </div>
+
+    <div class="geo-card">
+      <div class="geo-stripe"></div>
+      <div class="geo-body">
+        <div class="geo-label">Pergeseran Kelima · Amerika & NATO</div>
+        <div class="geo-title">Kelelahan Imperium dan Batas Kekuatannya</div>
+        <p>Amerika Serikat sedang mengalami kelelahan strategis yang nyata. Perang Ukraina menguras sumber daya politiknya. Kebijakan Trump yang transaksional membuat sekutu tradisional tidak lagi bisa mengandalkan Washington secara otomatis. NATO sendiri terbelah antara mendukung Ukraina dan menjaga stabilitas domestik masing-masing. <strong>Payung perlindungan Amerika terhadap Israel — yang selama ini menjadi "asuransi jiwa" keberlangsungannya — mulai terasa lebih tipis dari sebelumnya.</strong> Kegagalan mencegah 7 Oktober 2023, ketidakmampuan menghentikan serangan Houthi di Laut Merah selama berbulan-bulan, dan tekanan domestik dari generasi muda Amerika yang semakin keras menyuarakan pro-Palestina — semua ini adalah tanda bahwa hegemoni tunggal yang selama ini menjadi tulang punggung penjajahan sedang melemah dari akarnya.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- III: EKONOMI -->
+  <div class="divider"><span class="div-txt">III · Ketika Harga Bensin Naik, Dunia Kehilangan Kesabarannya</span></div>
+
+  <p>
+    Ada sebuah hukum geopolitik yang sederhana namun sering diabaikan: <em>kekaisaran tidak jatuh karena kekalahan militer saja. Ia jatuh ketika rakyatnya tidak bisa lagi membeli bahan makanan.</em>
+  </p>
+
+  <p>
+    Sejak invasi Rusia ke Ukraina pada 2022, dunia memasuki era harga energi yang tidak pernah kembali ke titik lamanya. Perang Ukraina memutus pasokan gas Rusia ke Eropa. Lalu datang konflik Gaza, lalu eskalasi Iran-Israel di 2025, lalu ketegangan di Selat Hormuz — jalur tempat seperlima dari seluruh pasokan minyak bumi dunia mengalir setiap harinya. Setiap eskalasi di Timur Tengah kini bergetar langsung ke pompa bensin di Jakarta, Karachi, Kairo, dan Lagos. Dan di ujung yang paling menyentuh: ke dapur ibu-ibu yang mendapati minyak goreng dan beras hari ini lebih mahal dari kemarin.
+  </p>
+
+  <div class="callout">
+    <span class="callout-lbl">Tekanan Ekonomi Global · 2025–2026</span>
+    <p>IMF (April 2026): perang yang berlanjut di Timur Tengah menambah beban berkepanjangan dari kenaikan harga energi sejak Ukraina. Minyak Brent naik dari $69/barel di 2025 ke proyeksi $86/barel di 2026 — dan bisa melampaui $100 jika Selat Hormuz terganggu. Inflasi negara-negara berkembang rata-rata 5,1% pada 2026, satu persen lebih tinggi dari proyeksi sebelum eskalasi. World Bank: dampaknya bergulir dalam tiga gelombang — energi, pangan, lalu utang yang semakin berat. Bagi petani di Jawa Tengah atau pedagang kecil di Makassar, ini bukan angka abstrak. Ini adalah selisih antara untung dan rugi setiap harinya.</p>
+  </div>
+
+  <p>
+    Dampak terbesar bukan pada Indonesia — meski kita juga merasakannya. Ia paling keras dirasakan di negara-negara yang paling dekat dengan lingkaran konflik. Di Mesir, lebih dari 60 juta orang hidup di bawah garis kemiskinan dan subsidi bahan pokok terus dipangkas karena beban utang. Di Pakistan, inflasi melemparkan kelas menengah kembali ke kemiskinan dalam waktu yang belum pernah secepat ini. Di Tunisia dan Aljazair, ketidakpuasan ekonomi bercampur dengan kesadaran baru tentang ketidakadilan global — dan nama Palestina disebut bukan hanya sebagai isu agama, tapi sebagai simbol dari seluruh sistem yang terasa tidak adil.
+  </p>
+
+  <p>
+    Dan ada satu aktor yang sering luput dari analisis: <strong>Houthi di Yaman.</strong> Dengan rudal dan drone berbiaya murah, mereka berhasil mengganggu jalur pelayaran Laut Merah selama berbulan-bulan, memaksa ratusan kapal niaga memutar lewat Tanjung Harapan Afrika. Biaya logistik global naik 20-40%. Amerika, dengan segala armada lautnya, tidak mampu menghentikannya. Ini bukan sekadar angka ekonomi — ini adalah demonstrasi bahwa supremasi teknologi memiliki batas, dan bahwa tekad yang lahir dari keyakinan bisa menandingi kekuatan yang jauh lebih besar secara material. Itulah pelajaran yang sama yang terus diulangi sejarah, dari Badr hingga Laut Merah.
+  </p>
+
+  <p>
+    Tekanan ekonomi yang terus menumpuk ini melemahkan negara-negara yang selama ini menjadi penopang Israel. Rakyat Amerika yang membayar harga bensin tertinggi dalam sejarah tidak antusias mendanai perang di Timur Tengah. Rakyat Eropa yang membayar tagihan energi dua kali lipat mulai mempertanyakan di mana sebenarnya kepentingan mereka. Dan ketika penopang melemah, yang selama ini ditopang pun ikut goyah.
+  </p>
+
+  <!-- IV: TANDA LANGIT -->
+  <div class="divider"><span class="div-txt">IV · Tanda-Tanda yang Langit Sudah Lama Catatkan</span></div>
+
+  <p>
+    Kita tidak memahami sejarah jika kita hanya membacanya dari sudut pandang kekuatan militer dan ekonomi. Sejarah yang sesungguhnya ditulis di tempat yang jauh lebih tinggi. Dan bagi mereka yang mau membaca dengan seksama, ada tanda-tanda yang sudah lama dicatatkan — dan kini sedang satu per satu terpenuhi di hadapan mata kita.
+  </p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-label">Tanda Pertama · Pintu-Pintu Sednaya Dibuka</div>
+      <p>Pada malam 8 Desember 2024, ribuan orang memasuki penjara Sednaya dan membuka sel-sel yang sudah terkunci bertahun-tahun. Ini bukan sekadar peristiwa humaniter. Ini adalah tanda dari langit: Allah membuka pintu yang dikunci oleh tangan kezaliman. Rasulullah ﷺ bersabda bahwa doa orang yang terzalimi langsung naik ke langit tanpa penghalang. Doa-doa dari balik jeruji Sednaya selama bertahun-tahun itu menumpuk di hadapan Allah — dan Allah menjawabnya, tepat pada waktunya, bukan sedetik lebih cepat dan bukan sedetik lebih lambat.</p>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-label">Tanda Kedua · Musuh Melemah dari Empat Penjuru Sekaligus</div>
+      <p>Dalam satu rentang waktu yang belum pernah terjadi sebelumnya dalam sejarah modern, semua kekuatan yang menopang penjajahan Baitul Maqdis sedang melemah secara bersamaan: Rusia terperangkap di Ukraina. Iran kehilangan Hizbullah dan Suriah. Amerika kelelahan dan terpecah secara domestik. Ekonomi Israel tertekan biaya perang multi-front sambil kehilangan warganya ke gelombang emigrasi. Ini bukan kebetulan yang bisa dijelaskan oleh analisis manusia. Ini adalah Allah yang sedang mencabut tiang-tiang penyangga kezaliman satu per satu, dari arah yang berbeda-beda, dalam waktu yang berdekatan.</p>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-label">Tanda Ketiga · Hukum Internasional Akhirnya Bersuara</div>
+      <p>Pada Juli 2024, International Court of Justice (ICJ) di Den Haag mengeluarkan opini konsultatif yang menyatakan bahwa pendudukan Israel atas Palestina adalah <em>ilegal menurut hukum internasional</em> dan harus diakhiri segera. Ini adalah pernyataan dari lembaga hukum tertinggi dunia — sesuatu yang bahkan setengah abad lalu tidak terbayangkan oleh siapa pun. Bersamaan dengan itu, proses kasus genosida yang diajukan Afrika Selatan terhadap Israel di ICJ terus berjalan. Hukum buatan manusia memang tidak sempurna dan tidak selalu ditegakkan. Tapi bahkan hukum buatan manusia pun kini menyatakan dengan tegas: <em>apa yang terjadi di Palestina adalah kejahatan.</em></p>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-label">Tanda Keempat · Kesadaran Global yang Tak Pernah Setinggi Ini</div>
+      <p>Setelah 7 Oktober 2023 dan perang Gaza yang berlanjut, dunia — bukan hanya dunia Muslim, tapi mahasiswa di Harvard, buruh di London, aktivis di Johannesburg, seniman di Seoul — menyebut dengan lantang apa yang sebelumnya tabu: bahwa yang terjadi di Palestina adalah apartheid dan genosida. Boikot global terhadap produk yang terkait dengan Israel mencapai skala yang belum pernah ada sebelumnya. Golda Meir tidak bisa tidur pada 1969 karena khawatir dunia Islam bangkit marah. Hari ini, yang bangkit bukan hanya dunia Islam — tapi dunia.</p>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-label">Tanda Kelima · Israel Bertindak dari Kepanikan, Bukan Keyakinan</div>
+      <p>Negara yang benar-benar yakin dengan masa depannya tidak bergegas menduduki wilayah baru saat tetangganya sedang dalam transisi yang rentan. Tapi dalam beberapa hari setelah Assad jatuh, Israel melancarkan hampir 500 serangan udara, menduduki buffer zone, menempatkan pasukan di Gunung Hermon "untuk waktu yang tidak terbatas," dan Netanyahu bergegas mengumumkan ekspansi permukiman di Golan. Ini bukan gerak kemenangan — ini adalah gerak kecemasan. Seorang pemenang yang yakin tidak tergesa-gesa. Yang tergesa-gesa adalah mereka yang <em>tahu bahwa waktu tidak berpihak kepada mereka.</em></p>
+    </div>
+  </div>
+
+  <!-- V: NUBUATAN TERPENUHI -->
+  <div class="divider"><span class="div-txt">V · Sebelum Bicara Tentang Yang Akan Datang, Ingatlah Yang Sudah Terpenuhi</span></div>
+
+  <p>
+    Ada sebuah cara untuk membangun keyakinan terhadap nubuatan yang belum terpenuhi: dengan mengingat nubuatan yang sudah terpenuhi — dan betapa panjangnya jarak waktu antara diucapkannya dengan terjadinya.
+  </p>
+
+  <p>
+    Rasulullah ﷺ bersabda bahwa Konstantinopel — ibukota Kekaisaran Romawi Timur yang pada zamannya adalah kota terkuat di dunia, dikelilingi tembok berlapis, tidak pernah jatuh selama seribu tahun — akan ditaklukkan oleh seorang pemimpin yang terbaik dan pasukan yang terbaik. Kalimat itu diucapkan di abad ke-7 Masehi. Delapan ratus tahun kemudian, pada 1453, seorang pemuda berusia 21 tahun bernama Muhammad al-Fatih melangkah masuk ke Hagia Sophia dan shalat dua rakaat di sana. Nubuatan itu terpenuhi, persis seperti yang disabdakan.
+  </p>
+
+  <div class="hadith">
+    <div class="hadith-ar">لَتُفْتَحَنَّ الْقُسْطَنْطِينِيَّةُ فَلَنِعْمَ الْأَمِيرُ أَمِيرُهَا وَلَنِعْمَ الْجَيْشُ ذَلِكَ الْجَيْشُ</div>
+    <p class="hadith-tr">"Sungguh Konstantinopel pasti akan ditaklukkan. Sebaik-baik pemimpin adalah pemimpinnya, dan sebaik-baik pasukan adalah pasukannya."</p>
+    <p class="hadith-src">— HR. Ahmad · Dari Bisyr bin Shuhaim radhiyallahu 'anhu · Terpenuhi 800 tahun kemudian di tangan Muhammad al-Fatih, 1453 M</p>
+  </div>
+
+  <p>
+    Kita menyebut Muhammad al-Fatih "Sang Penakluk" bukan hanya karena ia luar biasa secara militer. Kita menyebutnya demikian karena ia <em>mempersiapkan dirinya sejak kecil untuk menjadi jawaban atas sebuah doa yang sudah dipanjatkan selama delapan ratus tahun</em>. Ia hafal hadits itu. Ia membangun ilmunya, akhlaknya, kepemimpinannya — agar layak menjadi bagian dari nubuatan itu. Dan ketika waktunya tiba, Allah menyiapkan segala sesuatunya: cuaca, kondisi tembok, kecemasan di dalam kota — semua berpadu dalam rencana yang jauh melampaui rencana manusia mana pun.
+  </p>
+
+  <p>
+    Inilah cara Allah bekerja dalam sejarah. Dan siapa pun yang membacanya dengan mata yang jernih akan mengenali pola yang sama sedang berulang — kali ini, menuju Baitul Maqdis.
+  </p>
+
+  <!-- VI: YASSIN -->
+  <div class="divider"><span class="div-txt">VI · Syahid yang Sudah Melihat Lebih Jauh</span></div>
+
+  <p>
+    Pada 5 Juni 1999, di sebuah studio Al-Jazeera, seorang syaikh tua yang duduk di kursi roda — tidak bisa menggerakkan tangan maupun kakinya sejak usia 16 tahun — berkata dengan tenang kepada pewawancaranya:
+  </p>
+
+  <div class="yassin">
+    <span class="yassin-lbl">Prediksi Syahid · Syaikh Ahmed Yassin, 1999</span>
+    <p class="yassin-quote">"Saya tegaskan dengan jelas bahwa pada 2027, tidak akan ada lagi entitas yang bernama Israel. Israel didirikan di atas kezaliman dan perampasan tanah. Rezim seperti itu pasti akan runtuh. Al-Qur'an mengajarkan kita bahwa generasi berubah setiap 40 tahun. Periode pertama adalah Nakba. Periode kedua adalah Intifada dan perlawanan. Periode ketiga — insya Allah — adalah akhirnya."</p>
+    <p style="text-align:center; font-size:0.78rem; color:var(--muted); margin-bottom:16px;">— Wawancara Al-Jazeera, 5 Juni 1999 · Syaikh Yassin dimartirkan oleh serangan udara Israel, Maret 2004</p>
+    <div class="yassin-grid">
+      <div class="yassin-col">
+        <div class="yassin-col-num">40 Tahun I</div>
+        <div class="yassin-col-label">Periode An-Nakba<br>Pengusiran & Pendudukan</div>
+        <div class="yassin-col-tahun">1948 — 1987</div>
+      </div>
+      <div class="yassin-col">
+        <div class="yassin-col-num">40 Tahun II</div>
+        <div class="yassin-col-label">Periode Intifada<br>Perlawanan & Konfrontasi</div>
+        <div class="yassin-col-tahun">1987 — 2027</div>
+      </div>
+      <div class="yassin-col" style="background:var(--green);">
+        <div class="yassin-col-num" style="color:var(--gold-pale);">40 Tahun III</div>
+        <div class="yassin-col-label" style="color:#b0cbb8;">Periode Akhir<br>Insya Allah: Kemenangan</div>
+        <div class="yassin-col-tahun" style="color:var(--gold-pale);">2027 — ???</div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Pada 1999, prediksi ini terdengar seperti impian pejuang yang gigih namun tidak realistis. Dunia sedang dalam euforia proses perdamaian Oslo. Amerika di puncak unipolarity-nya. Israel sedang membangun tembok dan memperluas pemukiman dengan percaya diri. Dan seorang syaikh yang tidak bisa bergerak dari kursi rodanya mengatakan: "Israel akan tiada pada 2027."
+  </p>
+
+  <p>
+    Israel menjawab prediksi itu dengan membunuhnya lima tahun kemudian. Mereka meluncurkan rudal ke tubuhnya usai Subuh, saat ia keluar dari masjid di atas kursi roda. Tapi nubuatan yang lahir dari Al-Qur'an tidak ikut mati bersama tubuhnya.
+  </p>
+
+  <p>
+    Syaikh Yassin tidak berspekulasi. Ia membaca Al-Qur'an sebagai peta sejarah yang hidup — sesuatu yang jarang kita lakukan. Fondasi bacaannya adalah QS. Al-Isra' (17): 4-8, tentang dua masa kerusakan Bani Israil dan janji Allah bahwa setiap kerusakan akan berakhir dengan datangnya hamba-hamba-Nya yang akan menelusuri kampung-kampung yang hancur.
+  </p>
+
+  <div class="ayat">
+    <div class="ayat-ar">فَإِذَا جَاءَ وَعْدُ أُولَاهُمَا بَعَثْنَا عَلَيْكُمْ عِبَادًا لَّنَا أُولِي بَأْسٍ شَدِيدٍ فَجَاسُوا خِلَالَ الدِّيَارِ ۚ وَكَانَ وَعْدًا مَّفْعُولًا</div>
+    <p class="ayat-tr">"Maka apabila datang saat hukuman bagi (kejahatan) pertama dari kedua (kejahatan) itu, Kami datangkan kepadamu hamba-hamba Kami yang mempunyai kekuatan yang besar, lalu mereka menelusuri kampung-kampung (yang hancur). Dan itu adalah suatu ketetapan yang pasti terlaksana."</p>
+    <p class="ayat-src">— QS. Al-Isra' (17): 5</p>
+  </div>
+
+  <p>
+    Dua pertiga dari prediksinya sudah terbukti presisi: Nakba dimulai 1948, Intifada pertama muncul tepat 40 tahun kemudian pada 1987. Jika pola ini berlanjut — dan Al-Qur'an mengisyaratkan bahwa pergantian generasi 40 tahunan ini adalah hukum Allah dalam sejarah manusia — maka 2027 adalah cakrawala yang tidak bisa diabaikan begitu saja. Dan kita kini berada setahun darinya.
+  </p>
+
+  <p>
+    Namun perlu kita jujur — dan kejujuran ini justru memperkuat keyakinan kita, bukan melemahkannya. <strong>Tidak ada manusia yang tahu kapan persisnya janji Allah terpenuhi — hanya Allah yang tahu.</strong> Yang Syaikh Yassin baca adalah arah dan pola, bukan jadwal yang tertulis di kalender langit. Muhammad al-Fatih pun tidak tahu di tahun berapa ia akan menaklukkan Konstantinopel — ia hanya tahu bahwa ia harus mempersiapkan diri untuk menjadi layak. Begitu pula kita: 2027 bukan tenggat yang kita pasang untuk Allah, tapi penunjuk arah yang seharusnya membuat kita bergerak lebih sungguh-sungguh hari ini — lebih dari kemarin, dan kurang dari esok.
+  </p>
+
+  <!-- VII: SYARAT KEMENANGAN -->
+  <div class="divider"><span class="div-txt">VII · Syarat Kemenangan Bukan Hanya Melemahnya Musuh</span></div>
+
+  <p>
+    Kita sudah membaca tentang melemahnya kekuatan-kekuatan yang selama ini menopang penjajahan. Itu penting dan nyata. Tapi ada bahaya dalam cara membaca seperti itu jika kita berhenti di sana: bahaya bahwa kita menjadi penonton yang menunggu musuh runtuh sendiri tanpa merasa perlu bergerak.
+  </p>
+
+  <p>
+    Al-Qur'an tidak membiarkan kita nyaman dalam posisi penonton. "Jika kalian menolong (agama) Allah, maka Ia akan menolong kalian dan meneguhkan pendirian kalian" (QS. Muhammad: 7). Kemenangan bukan sekadar karena musuh lemah. Ia datang ketika kita layak menerimanya — ketika kita sudah mempersiapkan diri, membangun kapasitas, menjaga akhlak, dan mengikat hati kita kepada Allah dengan sungguh-sungguh.
+  </p>
+
+  <p>
+    Umar bin al-Khattab radhiyallahu 'anhu membuka Baitul Maqdis bukan hanya karena Romawi sedang melemah — walau itu benar adanya. Ia berhasil karena ia sendiri adalah pribadi yang layak: khalifah yang datang ke Baitul Maqdis dengan menunggangi keledai dan bergantian memegang tali dengan pelayannya, yang membersihkan halaman Masjidil Aqsha dengan tangannya sendiri, yang menolak shalat di dalam Gereja Makam Kudus karena tidak mau memberi alasan kepada generasi berikutnya untuk mengklaim tempat ibadah orang lain. <strong>Itulah standar yang Allah tuntut dari mereka yang dipilih-Nya sebagai alat kemenangan.</strong>
+  </p>
+
+  <p>
+    Pertanyaannya bukan hanya: apakah musuh sedang melemah? Pertanyaan yang lebih menentukan adalah: apakah kita sedang menguat?
+  </p>
+
+  <div class="muhasabah">
+    <span class="muhasabah-lbl">Muhasabah · Apa Peran Kita dalam Babak Ini?</span>
+    <p>Muhammad al-Fatih mempersiapkan dirinya sejak kecil untuk menjadi jawaban atas sebuah nubuatan. Ia hafal hadits Konstantinopel. Ia membangun dirinya — ilmunya, akhlaknya, kepemimpinannya — agar layak menjadi bagian dari janji itu. Apa yang sedang kita bangun dalam diri kita hari ini untuk Baitul Maqdis?</p>
+    <p>Syaikh Ahmed Yassin — duduk di kursi roda, tidak bisa menggerakkan anggota badannya — membaca Al-Qur'an dan melihat masa depan yang tidak bisa dilihat oleh para analis geopolitik dengan seluruh database dan superkomputer mereka. Sudahkah kita membaca Al-Qur'an kita dengan sungguh-sungguh sebagai peta kehidupan, bukan sekadar wirid yang disetorkan setiap pagi?</p>
+    <p>Penduduk Syam bertahan dalam lebih dari tiga belas tahun penderitaan tanpa melepaskan iman mereka. Kita — dalam kemudahan dan kenyamanan hidup kita — seberapa besar kontribusi yang sudah kita berikan? Doa, infaq, ilmu, pena, suara kita?</p>
+    <p>Para pemimpin Israel bergerak dengan cepat dan agresif — menduduki wilayah baru, membangun outpost, menekan diplomasi — bukan karena mereka percaya diri tentang masa depan, tapi karena mereka <em>tahu bahwa waktu tidak berpihak kepada mereka.</em> Orang yang yakin tidak tergesa-gesa. Yang tergesa-gesa adalah mereka yang takut kehilangan. Apakah kita sudah menggunakan waktu yang sedang berpihak kepada kita dengan sebaik-baiknya?</p>
+    <p>Dan yang paling sederhana namun paling sering terlupakan: doa. Rasulullah ﷺ memulai persiapan pembebasan Baitul Maqdis dari sujud-sujud panjangnya di malam Thaif — ketika tidak ada seorang pun yang mendengarnya kecuali Allah. Sudahkah kita menyebut nama Baitul Maqdis dalam doa-doa kita yang sungguh-sungguh — bukan sebagai formalitas, tapi sebagai kerinduan yang nyata dan permohonan yang tulus?</p>
+  </div>
+
+  <p>
+    Jatuhnya Assad adalah <em>Ajnadain zaman kita</em> — kemenangan awal yang membuka jalan, bukan kemenangan akhir yang menutup cerita. Masih banyak yang harus terjadi: Suriah harus stabil dan bersatu, Levant harus kembali menjadi kawasan barakah, umat harus layak, dan Allah harus meridhai. Tapi pola yang Allah letakkan dalam sejarah tidak pernah berdusta: setiap kali Syam mulai bangkit, Baitul Maqdis mulai mendekat.
+  </p>
+
+  <p>
+    Mungkin kita tidak akan ada untuk menyaksikan hari itu. Mungkin anak-anak kita. Atau cucu-cucu kita. Tapi satu hal yang pasti: <strong>Allah tidak pernah mengingkari janji-Nya.</strong> Dan janji-Nya tentang Baitul Maqdis tidak memerlukan persetujuan kekuatan militer mana pun, tidak menunggu resolusi PBB mana pun, dan tidak bergantung pada naik-turunnya harga minyak di pasar global.
+  </p>
+
+  <p>
+    Ia hanya membutuhkan satu hal dari kita: <em>hamba-hamba yang layak menjadi alat-Nya.</em>
+  </p>
+
+  <div class="pull">
+    <p>Jatuhnya Suriah dari genggaman rezim Assad adalah sinyal dari langit bahwa proses itu sedang berjalan. Bukan untuk kita rayakan dengan euforia sesaat, tapi untuk kita sambut dengan mempersiapkan diri lebih sungguh-sungguh dari sebelumnya. Karena ketika Baitul Maqdis akhirnya merdeka, Allah sedang memilih siapa yang akan menjadi bagian dari generasi pembebas itu — dan seleksi itu dimulai dari hari ini, dari pilihan-pilihan kecil yang kita buat setiap pagi.</p>
+    <p class="attr">— Penutup Narasi · Ketika Syam Bangkit · Mei 2026 M</p>
+  </div>
+
+</article>
+
+<!-- ===== COLOFON ===== -->
+<div class="colofon">
+  <p>
+    Ditulis pada <span>Rajab 1447 Hijriyah · Mei 2026 Masehi</span><br>
+    Disusun berdasarkan kajian atas <span>Buku Kecil Baitul Maqdis</span> (Institut Al-Aqsa & Sahabat Al-Aqsha, 1441 H / 2020 M)<br>
+    serta perkembangan geopolitik, ekonomi global, dan dalil-dalil Al-Qur'an dan Sunnah yang relevan<br>
+    <span>لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ</span>
+  </p>
+</div>
+
+<!-- ===== PENUTUP ===== -->
+<section class="penutup">
+  <div class="penutup-ornament">✦ ✦ ✦</div>
+
+  <div class="penutup-arabic">وَنُرِيدُ أَن نَّمُنَّ عَلَى الَّذِينَ اسْتُضْعِفُوا فِي الْأَرْضِ وَنَجْعَلَهُمْ أَئِمَّةً وَنَجْعَلَهُمُ الْوَارِثِينَ</div>
+  <p class="penutup-tr">"Dan Kami hendak memberi karunia kepada orang-orang yang tertindas di bumi itu dan hendak menjadikan mereka pemimpin dan menjadikan mereka orang-orang yang mewarisi (bumi)."</p>
+  <p class="penutup-src">— QS. Al-Qashash (28): 5</p>
+
+  <div class="penutup-rule"></div>
+
+  <p class="penutup-narasi">
+    Allah tidak mengatakan "Kami ingin memberi karunia kepada orang-orang yang kuat."<br>
+    Allah tidak mengatakan "Kami ingin menjadikan pemimpin orang-orang yang kaya."<br>
+    Allah mengatakan: <em>orang-orang yang tertindas di bumi.</em><br><br>
+    Mereka yang selama ini kelihatan kalah di mata dunia —<br>
+    adalah mereka yang dipilih Allah untuk menjadi pewaris berikutnya.<br><br>
+    Jika kamu berpihak kepada mereka,<br>
+    maka kamu sedang berpihak kepada sejarah yang sedang Allah tulis.
+  </p>
+
+  <div class="penutup-rule"></div>
+
+  <div class="penutup-arabic" style="font-size:1.35rem;">
+    اللَّهُمَّ فَرِّجْ عَنْ أَهْلِ فِلَسْطِينَ وَأَهْلِ الشَّامِ وَأَهْلِ غَزَّةَ<br>
+    وَاجْعَلْ لَهُمْ مِنْ أَمْرِهِمْ فَرَجًا وَمَخْرَجًا يَا رَبَّ الْعَالَمِينَ
+  </div>
+  <p class="penutup-doa">Ya Allah, lapangkanlah keadaan penduduk Palestina, penduduk Syam, dan penduduk Gaza. Jadikanlah bagi mereka jalan keluar dan kemudahan dari setiap urusan mereka, wahai Rabb semesta alam.</p>
+</section>
+
+</body>
+</html>
